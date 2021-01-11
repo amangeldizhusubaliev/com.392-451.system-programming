@@ -1,0 +1,1423 @@
+
+sepiaINT:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000000930 <_init>:
+ 930:	48 83 ec 08          	sub    $0x8,%rsp
+ 934:	48 8b 05 ad 26 20 00 	mov    0x2026ad(%rip),%rax        # 202fe8 <__gmon_start__>
+ 93b:	48 85 c0             	test   %rax,%rax
+ 93e:	74 02                	je     942 <_init+0x12>
+ 940:	ff d0                	callq  *%rax
+ 942:	48 83 c4 08          	add    $0x8,%rsp
+ 946:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000000950 <.plt>:
+ 950:	ff 35 1a 26 20 00    	pushq  0x20261a(%rip)        # 202f70 <_GLOBAL_OFFSET_TABLE_+0x8>
+ 956:	ff 25 1c 26 20 00    	jmpq   *0x20261c(%rip)        # 202f78 <_GLOBAL_OFFSET_TABLE_+0x10>
+ 95c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000960 <free@plt>:
+ 960:	ff 25 1a 26 20 00    	jmpq   *0x20261a(%rip)        # 202f80 <free@GLIBC_2.2.5>
+ 966:	68 00 00 00 00       	pushq  $0x0
+ 96b:	e9 e0 ff ff ff       	jmpq   950 <.plt>
+
+0000000000000970 <fread@plt>:
+ 970:	ff 25 12 26 20 00    	jmpq   *0x202612(%rip)        # 202f88 <fread@GLIBC_2.2.5>
+ 976:	68 01 00 00 00       	pushq  $0x1
+ 97b:	e9 d0 ff ff ff       	jmpq   950 <.plt>
+
+0000000000000980 <fclose@plt>:
+ 980:	ff 25 0a 26 20 00    	jmpq   *0x20260a(%rip)        # 202f90 <fclose@GLIBC_2.2.5>
+ 986:	68 02 00 00 00       	pushq  $0x2
+ 98b:	e9 c0 ff ff ff       	jmpq   950 <.plt>
+
+0000000000000990 <__stack_chk_fail@plt>:
+ 990:	ff 25 02 26 20 00    	jmpq   *0x202602(%rip)        # 202f98 <__stack_chk_fail@GLIBC_2.4>
+ 996:	68 03 00 00 00       	pushq  $0x3
+ 99b:	e9 b0 ff ff ff       	jmpq   950 <.plt>
+
+00000000000009a0 <memset@plt>:
+ 9a0:	ff 25 fa 25 20 00    	jmpq   *0x2025fa(%rip)        # 202fa0 <memset@GLIBC_2.2.5>
+ 9a6:	68 04 00 00 00       	pushq  $0x4
+ 9ab:	e9 a0 ff ff ff       	jmpq   950 <.plt>
+
+00000000000009b0 <fprintf@plt>:
+ 9b0:	ff 25 f2 25 20 00    	jmpq   *0x2025f2(%rip)        # 202fa8 <fprintf@GLIBC_2.2.5>
+ 9b6:	68 05 00 00 00       	pushq  $0x5
+ 9bb:	e9 90 ff ff ff       	jmpq   950 <.plt>
+
+00000000000009c0 <memcpy@plt>:
+ 9c0:	ff 25 ea 25 20 00    	jmpq   *0x2025ea(%rip)        # 202fb0 <memcpy@GLIBC_2.14>
+ 9c6:	68 06 00 00 00       	pushq  $0x6
+ 9cb:	e9 80 ff ff ff       	jmpq   950 <.plt>
+
+00000000000009d0 <malloc@plt>:
+ 9d0:	ff 25 e2 25 20 00    	jmpq   *0x2025e2(%rip)        # 202fb8 <malloc@GLIBC_2.2.5>
+ 9d6:	68 07 00 00 00       	pushq  $0x7
+ 9db:	e9 70 ff ff ff       	jmpq   950 <.plt>
+
+00000000000009e0 <fopen@plt>:
+ 9e0:	ff 25 da 25 20 00    	jmpq   *0x2025da(%rip)        # 202fc0 <fopen@GLIBC_2.2.5>
+ 9e6:	68 08 00 00 00       	pushq  $0x8
+ 9eb:	e9 60 ff ff ff       	jmpq   950 <.plt>
+
+00000000000009f0 <fwrite@plt>:
+ 9f0:	ff 25 d2 25 20 00    	jmpq   *0x2025d2(%rip)        # 202fc8 <fwrite@GLIBC_2.2.5>
+ 9f6:	68 09 00 00 00       	pushq  $0x9
+ 9fb:	e9 50 ff ff ff       	jmpq   950 <.plt>
+
+0000000000000a00 <aligned_alloc@plt>:
+ a00:	ff 25 ca 25 20 00    	jmpq   *0x2025ca(%rip)        # 202fd0 <aligned_alloc@GLIBC_2.16>
+ a06:	68 0a 00 00 00       	pushq  $0xa
+ a0b:	e9 40 ff ff ff       	jmpq   950 <.plt>
+
+Disassembly of section .plt.got:
+
+0000000000000a10 <__cxa_finalize@plt>:
+ a10:	ff 25 e2 25 20 00    	jmpq   *0x2025e2(%rip)        # 202ff8 <__cxa_finalize@GLIBC_2.2.5>
+ a16:	66 90                	xchg   %ax,%ax
+
+Disassembly of section .text:
+
+0000000000000a20 <_start>:
+     a20:	31 ed                	xor    %ebp,%ebp
+     a22:	49 89 d1             	mov    %rdx,%r9
+     a25:	5e                   	pop    %rsi
+     a26:	48 89 e2             	mov    %rsp,%rdx
+     a29:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+     a2d:	50                   	push   %rax
+     a2e:	54                   	push   %rsp
+     a2f:	4c 8d 05 5a 16 00 00 	lea    0x165a(%rip),%r8        # 2090 <__libc_csu_fini>
+     a36:	48 8d 0d e3 15 00 00 	lea    0x15e3(%rip),%rcx        # 2020 <__libc_csu_init>
+     a3d:	48 8d 3d 88 0e 00 00 	lea    0xe88(%rip),%rdi        # 18cc <main>
+     a44:	ff 15 96 25 20 00    	callq  *0x202596(%rip)        # 202fe0 <__libc_start_main@GLIBC_2.2.5>
+     a4a:	f4                   	hlt    
+     a4b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000000a50 <deregister_tm_clones>:
+     a50:	48 8d 3d 31 26 20 00 	lea    0x202631(%rip),%rdi        # 203088 <__TMC_END__>
+     a57:	55                   	push   %rbp
+     a58:	48 8d 05 29 26 20 00 	lea    0x202629(%rip),%rax        # 203088 <__TMC_END__>
+     a5f:	48 39 f8             	cmp    %rdi,%rax
+     a62:	48 89 e5             	mov    %rsp,%rbp
+     a65:	74 19                	je     a80 <deregister_tm_clones+0x30>
+     a67:	48 8b 05 6a 25 20 00 	mov    0x20256a(%rip),%rax        # 202fd8 <_ITM_deregisterTMCloneTable>
+     a6e:	48 85 c0             	test   %rax,%rax
+     a71:	74 0d                	je     a80 <deregister_tm_clones+0x30>
+     a73:	5d                   	pop    %rbp
+     a74:	ff e0                	jmpq   *%rax
+     a76:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+     a7d:	00 00 00 
+     a80:	5d                   	pop    %rbp
+     a81:	c3                   	retq   
+     a82:	0f 1f 40 00          	nopl   0x0(%rax)
+     a86:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+     a8d:	00 00 00 
+
+0000000000000a90 <register_tm_clones>:
+     a90:	48 8d 3d f1 25 20 00 	lea    0x2025f1(%rip),%rdi        # 203088 <__TMC_END__>
+     a97:	48 8d 35 ea 25 20 00 	lea    0x2025ea(%rip),%rsi        # 203088 <__TMC_END__>
+     a9e:	55                   	push   %rbp
+     a9f:	48 29 fe             	sub    %rdi,%rsi
+     aa2:	48 89 e5             	mov    %rsp,%rbp
+     aa5:	48 c1 fe 03          	sar    $0x3,%rsi
+     aa9:	48 89 f0             	mov    %rsi,%rax
+     aac:	48 c1 e8 3f          	shr    $0x3f,%rax
+     ab0:	48 01 c6             	add    %rax,%rsi
+     ab3:	48 d1 fe             	sar    %rsi
+     ab6:	74 18                	je     ad0 <register_tm_clones+0x40>
+     ab8:	48 8b 05 31 25 20 00 	mov    0x202531(%rip),%rax        # 202ff0 <_ITM_registerTMCloneTable>
+     abf:	48 85 c0             	test   %rax,%rax
+     ac2:	74 0c                	je     ad0 <register_tm_clones+0x40>
+     ac4:	5d                   	pop    %rbp
+     ac5:	ff e0                	jmpq   *%rax
+     ac7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+     ace:	00 00 
+     ad0:	5d                   	pop    %rbp
+     ad1:	c3                   	retq   
+     ad2:	0f 1f 40 00          	nopl   0x0(%rax)
+     ad6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+     add:	00 00 00 
+
+0000000000000ae0 <__do_global_dtors_aux>:
+     ae0:	80 3d c1 25 20 00 00 	cmpb   $0x0,0x2025c1(%rip)        # 2030a8 <completed.7698>
+     ae7:	75 2f                	jne    b18 <__do_global_dtors_aux+0x38>
+     ae9:	48 83 3d 07 25 20 00 	cmpq   $0x0,0x202507(%rip)        # 202ff8 <__cxa_finalize@GLIBC_2.2.5>
+     af0:	00 
+     af1:	55                   	push   %rbp
+     af2:	48 89 e5             	mov    %rsp,%rbp
+     af5:	74 0c                	je     b03 <__do_global_dtors_aux+0x23>
+     af7:	48 8b 3d 0a 25 20 00 	mov    0x20250a(%rip),%rdi        # 203008 <__dso_handle>
+     afe:	e8 0d ff ff ff       	callq  a10 <__cxa_finalize@plt>
+     b03:	e8 48 ff ff ff       	callq  a50 <deregister_tm_clones>
+     b08:	c6 05 99 25 20 00 01 	movb   $0x1,0x202599(%rip)        # 2030a8 <completed.7698>
+     b0f:	5d                   	pop    %rbp
+     b10:	c3                   	retq   
+     b11:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+     b18:	f3 c3                	repz retq 
+     b1a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000000b20 <frame_dummy>:
+     b20:	55                   	push   %rbp
+     b21:	48 89 e5             	mov    %rsp,%rbp
+     b24:	5d                   	pop    %rbp
+     b25:	e9 66 ff ff ff       	jmpq   a90 <register_tm_clones>
+
+0000000000000b2a <bmp_init_image_structure>:
+     b2a:	55                   	push   %rbp
+     b2b:	48 89 e5             	mov    %rsp,%rbp
+     b2e:	48 83 ec 10          	sub    $0x10,%rsp
+     b32:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+     b36:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+     b3b:	74 16                	je     b53 <bmp_init_image_structure+0x29>
+     b3d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+     b41:	ba 88 01 00 00       	mov    $0x188,%edx
+     b46:	be 00 00 00 00       	mov    $0x0,%esi
+     b4b:	48 89 c7             	mov    %rax,%rdi
+     b4e:	e8 4d fe ff ff       	callq  9a0 <memset@plt>
+     b53:	90                   	nop
+     b54:	c9                   	leaveq 
+     b55:	c3                   	retq   
+
+0000000000000b56 <bmp_free_image_structure>:
+     b56:	55                   	push   %rbp
+     b57:	48 89 e5             	mov    %rsp,%rbp
+     b5a:	48 83 ec 10          	sub    $0x10,%rsp
+     b5e:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+     b62:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+     b67:	74 64                	je     bcd <bmp_free_image_structure+0x77>
+     b69:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+     b6d:	48 8b 80 40 01 00 00 	mov    0x140(%rax),%rax
+     b74:	48 85 c0             	test   %rax,%rax
+     b77:	74 22                	je     b9b <bmp_free_image_structure+0x45>
+     b79:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+     b7d:	48 8b 80 40 01 00 00 	mov    0x140(%rax),%rax
+     b84:	48 89 c7             	mov    %rax,%rdi
+     b87:	e8 d4 fd ff ff       	callq  960 <free@plt>
+     b8c:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+     b90:	48 c7 80 40 01 00 00 	movq   $0x0,0x140(%rax)
+     b97:	00 00 00 00 
+     b9b:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+     b9f:	48 8b 80 50 01 00 00 	mov    0x150(%rax),%rax
+     ba6:	48 85 c0             	test   %rax,%rax
+     ba9:	74 22                	je     bcd <bmp_free_image_structure+0x77>
+     bab:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+     baf:	48 8b 80 50 01 00 00 	mov    0x150(%rax),%rax
+     bb6:	48 89 c7             	mov    %rax,%rdi
+     bb9:	e8 a2 fd ff ff       	callq  960 <free@plt>
+     bbe:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+     bc2:	48 c7 80 50 01 00 00 	movq   $0x0,0x150(%rax)
+     bc9:	00 00 00 00 
+     bcd:	90                   	nop
+     bce:	c9                   	leaveq 
+     bcf:	c3                   	retq   
+
+0000000000000bd0 <bmp_open_image_headers>:
+     bd0:	55                   	push   %rbp
+     bd1:	48 89 e5             	mov    %rsp,%rbp
+     bd4:	48 83 ec 50          	sub    $0x50,%rsp
+     bd8:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+     bdc:	48 89 75 c0          	mov    %rsi,-0x40(%rbp)
+     be0:	48 89 55 b8          	mov    %rdx,-0x48(%rbp)
+     be4:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+     be8:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+     bef:	48 83 7d c0 00       	cmpq   $0x0,-0x40(%rbp)
+     bf4:	75 1e                	jne    c14 <bmp_open_image_headers+0x44>
+     bf6:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+     bfb:	0f 84 32 02 00 00    	je     e33 <bmp_open_image_headers+0x263>
+     c01:	48 8b 15 40 24 20 00 	mov    0x202440(%rip),%rdx        # 203048 <BMP_Error_Invalid_Image_Structure>
+     c08:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+     c0c:	48 89 10             	mov    %rdx,(%rax)
+     c0f:	e9 1f 02 00 00       	jmpq   e33 <bmp_open_image_headers+0x263>
+     c14:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+     c19:	75 1e                	jne    c39 <bmp_open_image_headers+0x69>
+     c1b:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+     c20:	0f 84 10 02 00 00    	je     e36 <bmp_open_image_headers+0x266>
+     c26:	48 8b 15 e3 23 20 00 	mov    0x2023e3(%rip),%rdx        # 203010 <BMP_Error_Invalid_File_Descriptor>
+     c2d:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+     c31:	48 89 10             	mov    %rdx,(%rax)
+     c34:	e9 fd 01 00 00       	jmpq   e36 <bmp_open_image_headers+0x266>
+     c39:	48 c7 45 d8 0e 00 00 	movq   $0xe,-0x28(%rbp)
+     c40:	00 
+     c41:	48 c7 45 e0 28 00 00 	movq   $0x28,-0x20(%rbp)
+     c48:	00 
+     c49:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+     c4d:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+     c51:	48 01 d0             	add    %rdx,%rax
+     c54:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+     c58:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     c5c:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+     c60:	48 8b 75 d8          	mov    -0x28(%rbp),%rsi
+     c64:	48 89 d1             	mov    %rdx,%rcx
+     c67:	ba 01 00 00 00       	mov    $0x1,%edx
+     c6c:	48 89 c7             	mov    %rax,%rdi
+     c6f:	e8 fc fc ff ff       	callq  970 <fread@plt>
+     c74:	48 85 c0             	test   %rax,%rax
+     c77:	75 1e                	jne    c97 <bmp_open_image_headers+0xc7>
+     c79:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+     c7e:	0f 84 b5 01 00 00    	je     e39 <bmp_open_image_headers+0x269>
+     c84:	48 8b 15 8d 23 20 00 	mov    0x20238d(%rip),%rdx        # 203018 <BMP_Error_Failed_to_Read_File_Header>
+     c8b:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+     c8f:	48 89 10             	mov    %rdx,(%rax)
+     c92:	e9 a2 01 00 00       	jmpq   e39 <bmp_open_image_headers+0x269>
+     c97:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     c9b:	0f b6 00             	movzbl (%rax),%eax
+     c9e:	0f b6 c0             	movzbl %al,%eax
+     ca1:	ba 42 00 00 00       	mov    $0x42,%edx
+     ca6:	39 d0                	cmp    %edx,%eax
+     ca8:	75 14                	jne    cbe <bmp_open_image_headers+0xee>
+     caa:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     cae:	0f b6 40 01          	movzbl 0x1(%rax),%eax
+     cb2:	0f b6 c0             	movzbl %al,%eax
+     cb5:	ba 4d 00 00 00       	mov    $0x4d,%edx
+     cba:	39 d0                	cmp    %edx,%eax
+     cbc:	74 1e                	je     cdc <bmp_open_image_headers+0x10c>
+     cbe:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+     cc3:	0f 84 73 01 00 00    	je     e3c <bmp_open_image_headers+0x26c>
+     cc9:	48 8b 15 50 23 20 00 	mov    0x202350(%rip),%rdx        # 203020 <BMP_Error_Invalid_File_Signature>
+     cd0:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+     cd4:	48 89 10             	mov    %rdx,(%rax)
+     cd7:	e9 60 01 00 00       	jmpq   e3c <bmp_open_image_headers+0x26c>
+     cdc:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     ce0:	48 8d 78 0e          	lea    0xe(%rax),%rdi
+     ce4:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+     ce8:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+     cec:	48 89 d1             	mov    %rdx,%rcx
+     cef:	ba 01 00 00 00       	mov    $0x1,%edx
+     cf4:	48 89 c6             	mov    %rax,%rsi
+     cf7:	e8 74 fc ff ff       	callq  970 <fread@plt>
+     cfc:	48 85 c0             	test   %rax,%rax
+     cff:	75 1e                	jne    d1f <bmp_open_image_headers+0x14f>
+     d01:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+     d06:	0f 84 33 01 00 00    	je     e3f <bmp_open_image_headers+0x26f>
+     d0c:	48 8b 15 15 23 20 00 	mov    0x202315(%rip),%rdx        # 203028 <BMP_Error_Failed_to_Read_DIB_Header>
+     d13:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+     d17:	48 89 10             	mov    %rdx,(%rax)
+     d1a:	e9 20 01 00 00       	jmpq   e3f <bmp_open_image_headers+0x26f>
+     d1f:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     d23:	8b 40 0e             	mov    0xe(%rax),%eax
+     d26:	89 c0                	mov    %eax,%eax
+     d28:	48 2b 45 e0          	sub    -0x20(%rbp),%rax
+     d2c:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+     d30:	b8 00 00 00 00       	mov    $0x0,%eax
+     d35:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+     d3a:	48 0f 49 45 f0       	cmovns -0x10(%rbp),%rax
+     d3f:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+     d43:	48 81 7d f8 00 01 00 	cmpq   $0x100,-0x8(%rbp)
+     d4a:	00 
+     d4b:	76 1e                	jbe    d6b <bmp_open_image_headers+0x19b>
+     d4d:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+     d52:	0f 84 ea 00 00 00    	je     e42 <bmp_open_image_headers+0x272>
+     d58:	48 8b 15 d1 22 20 00 	mov    0x2022d1(%rip),%rdx        # 203030 <BMP_Error_Invalid_Dib_Header_Size>
+     d5f:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+     d63:	48 89 10             	mov    %rdx,(%rax)
+     d66:	e9 d7 00 00 00       	jmpq   e42 <bmp_open_image_headers+0x272>
+     d6b:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+     d70:	74 43                	je     db5 <bmp_open_image_headers+0x1e5>
+     d72:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     d76:	48 8d 78 36          	lea    0x36(%rax),%rdi
+     d7a:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+     d7e:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+     d82:	48 89 d1             	mov    %rdx,%rcx
+     d85:	ba 01 00 00 00       	mov    $0x1,%edx
+     d8a:	48 89 c6             	mov    %rax,%rsi
+     d8d:	e8 de fb ff ff       	callq  970 <fread@plt>
+     d92:	48 85 c0             	test   %rax,%rax
+     d95:	75 1e                	jne    db5 <bmp_open_image_headers+0x1e5>
+     d97:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+     d9c:	0f 84 a3 00 00 00    	je     e45 <bmp_open_image_headers+0x275>
+     da2:	48 8b 15 7f 22 20 00 	mov    0x20227f(%rip),%rdx        # 203028 <BMP_Error_Failed_to_Read_DIB_Header>
+     da9:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+     dad:	48 89 10             	mov    %rdx,(%rax)
+     db0:	e9 90 00 00 00       	jmpq   e45 <bmp_open_image_headers+0x275>
+     db5:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     db9:	0f b7 40 1c          	movzwl 0x1c(%rax),%eax
+     dbd:	66 83 f8 18          	cmp    $0x18,%ax
+     dc1:	74 25                	je     de8 <bmp_open_image_headers+0x218>
+     dc3:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     dc7:	0f b7 40 1c          	movzwl 0x1c(%rax),%eax
+     dcb:	66 83 f8 20          	cmp    $0x20,%ax
+     dcf:	74 17                	je     de8 <bmp_open_image_headers+0x218>
+     dd1:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+     dd6:	74 70                	je     e48 <bmp_open_image_headers+0x278>
+     dd8:	48 8b 15 59 22 20 00 	mov    0x202259(%rip),%rdx        # 203038 <BMP_Error_Unsupported_Color_Depth>
+     ddf:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+     de3:	48 89 10             	mov    %rdx,(%rax)
+     de6:	eb 60                	jmp    e48 <bmp_open_image_headers+0x278>
+     de8:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     dec:	0f b7 40 1c          	movzwl 0x1c(%rax),%eax
+     df0:	66 83 f8 18          	cmp    $0x18,%ax
+     df4:	75 07                	jne    dfd <bmp_open_image_headers+0x22d>
+     df6:	ba 03 00 00 00       	mov    $0x3,%edx
+     dfb:	eb 05                	jmp    e02 <bmp_open_image_headers+0x232>
+     dfd:	ba 04 00 00 00       	mov    $0x4,%edx
+     e02:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     e06:	48 89 90 80 01 00 00 	mov    %rdx,0x180(%rax)
+     e0d:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+     e11:	8b 40 02             	mov    0x2(%rax),%eax
+     e14:	89 c0                	mov    %eax,%eax
+     e16:	48 39 45 e8          	cmp    %rax,-0x18(%rbp)
+     e1a:	72 2f                	jb     e4b <bmp_open_image_headers+0x27b>
+     e1c:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+     e21:	74 2b                	je     e4e <bmp_open_image_headers+0x27e>
+     e23:	48 8b 15 16 22 20 00 	mov    0x202216(%rip),%rdx        # 203040 <BMP_Error_Invalid_Size_Information>
+     e2a:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+     e2e:	48 89 10             	mov    %rdx,(%rax)
+     e31:	eb 1b                	jmp    e4e <bmp_open_image_headers+0x27e>
+     e33:	90                   	nop
+     e34:	eb 19                	jmp    e4f <bmp_open_image_headers+0x27f>
+     e36:	90                   	nop
+     e37:	eb 16                	jmp    e4f <bmp_open_image_headers+0x27f>
+     e39:	90                   	nop
+     e3a:	eb 13                	jmp    e4f <bmp_open_image_headers+0x27f>
+     e3c:	90                   	nop
+     e3d:	eb 10                	jmp    e4f <bmp_open_image_headers+0x27f>
+     e3f:	90                   	nop
+     e40:	eb 0d                	jmp    e4f <bmp_open_image_headers+0x27f>
+     e42:	90                   	nop
+     e43:	eb 0a                	jmp    e4f <bmp_open_image_headers+0x27f>
+     e45:	90                   	nop
+     e46:	eb 07                	jmp    e4f <bmp_open_image_headers+0x27f>
+     e48:	90                   	nop
+     e49:	eb 04                	jmp    e4f <bmp_open_image_headers+0x27f>
+     e4b:	90                   	nop
+     e4c:	eb 01                	jmp    e4f <bmp_open_image_headers+0x27f>
+     e4e:	90                   	nop
+     e4f:	90                   	nop
+     e50:	c9                   	leaveq 
+     e51:	c3                   	retq   
+
+0000000000000e52 <bmp_read_image_data>:
+     e52:	55                   	push   %rbp
+     e53:	48 89 e5             	mov    %rsp,%rbp
+     e56:	48 81 ec e0 00 00 00 	sub    $0xe0,%rsp
+     e5d:	48 89 bd 38 ff ff ff 	mov    %rdi,-0xc8(%rbp)
+     e64:	48 89 b5 30 ff ff ff 	mov    %rsi,-0xd0(%rbp)
+     e6b:	48 89 95 28 ff ff ff 	mov    %rdx,-0xd8(%rbp)
+     e72:	48 8b 85 28 ff ff ff 	mov    -0xd8(%rbp),%rax
+     e79:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+     e80:	48 83 bd 30 ff ff ff 	cmpq   $0x0,-0xd0(%rbp)
+     e87:	00 
+     e88:	75 24                	jne    eae <bmp_read_image_data+0x5c>
+     e8a:	48 83 bd 28 ff ff ff 	cmpq   $0x0,-0xd8(%rbp)
+     e91:	00 
+     e92:	0f 84 a8 05 00 00    	je     1440 <bmp_read_image_data+0x5ee>
+     e98:	48 8b 15 a9 21 20 00 	mov    0x2021a9(%rip),%rdx        # 203048 <BMP_Error_Invalid_Image_Structure>
+     e9f:	48 8b 85 28 ff ff ff 	mov    -0xd8(%rbp),%rax
+     ea6:	48 89 10             	mov    %rdx,(%rax)
+     ea9:	e9 92 05 00 00       	jmpq   1440 <bmp_read_image_data+0x5ee>
+     eae:	48 83 bd 38 ff ff ff 	cmpq   $0x0,-0xc8(%rbp)
+     eb5:	00 
+     eb6:	75 24                	jne    edc <bmp_read_image_data+0x8a>
+     eb8:	48 83 bd 28 ff ff ff 	cmpq   $0x0,-0xd8(%rbp)
+     ebf:	00 
+     ec0:	0f 84 80 05 00 00    	je     1446 <bmp_read_image_data+0x5f4>
+     ec6:	48 8b 15 43 21 20 00 	mov    0x202143(%rip),%rdx        # 203010 <BMP_Error_Invalid_File_Descriptor>
+     ecd:	48 8b 85 28 ff ff ff 	mov    -0xd8(%rbp),%rax
+     ed4:	48 89 10             	mov    %rdx,(%rax)
+     ed7:	e9 6a 05 00 00       	jmpq   1446 <bmp_read_image_data+0x5f4>
+     edc:	48 c7 45 80 0e 00 00 	movq   $0xe,-0x80(%rbp)
+     ee3:	00 
+     ee4:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+     eeb:	8b 40 0e             	mov    0xe(%rax),%eax
+     eee:	89 c0                	mov    %eax,%eax
+     ef0:	48 89 45 88          	mov    %rax,-0x78(%rbp)
+     ef4:	48 8b 55 80          	mov    -0x80(%rbp),%rdx
+     ef8:	48 8b 45 88          	mov    -0x78(%rbp),%rax
+     efc:	48 01 d0             	add    %rdx,%rax
+     eff:	48 89 45 90          	mov    %rax,-0x70(%rbp)
+     f03:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+     f0a:	8b 40 02             	mov    0x2(%rax),%eax
+     f0d:	89 c0                	mov    %eax,%eax
+     f0f:	48 2b 45 90          	sub    -0x70(%rbp),%rax
+     f13:	48 89 45 98          	mov    %rax,-0x68(%rbp)
+     f17:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+     f1e:	48 8b 55 98          	mov    -0x68(%rbp),%rdx
+     f22:	48 89 90 38 01 00 00 	mov    %rdx,0x138(%rax)
+     f29:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+     f2d:	48 89 c7             	mov    %rax,%rdi
+     f30:	e8 9b fa ff ff       	callq  9d0 <malloc@plt>
+     f35:	48 89 c2             	mov    %rax,%rdx
+     f38:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+     f3f:	48 89 90 40 01 00 00 	mov    %rdx,0x140(%rax)
+     f46:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+     f4d:	48 8b 80 40 01 00 00 	mov    0x140(%rax),%rax
+     f54:	48 85 c0             	test   %rax,%rax
+     f57:	75 24                	jne    f7d <bmp_read_image_data+0x12b>
+     f59:	48 83 bd 28 ff ff ff 	cmpq   $0x0,-0xd8(%rbp)
+     f60:	00 
+     f61:	0f 84 e5 04 00 00    	je     144c <bmp_read_image_data+0x5fa>
+     f67:	48 8b 15 e2 20 20 00 	mov    0x2020e2(%rip),%rdx        # 203050 <BMP_Error_Not_Enough_Memory_to_Read>
+     f6e:	48 8b 85 28 ff ff ff 	mov    -0xd8(%rbp),%rax
+     f75:	48 89 10             	mov    %rdx,(%rax)
+     f78:	e9 cf 04 00 00       	jmpq   144c <bmp_read_image_data+0x5fa>
+     f7d:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+     f84:	48 8b 80 40 01 00 00 	mov    0x140(%rax),%rax
+     f8b:	48 8b 95 38 ff ff ff 	mov    -0xc8(%rbp),%rdx
+     f92:	48 8b 75 98          	mov    -0x68(%rbp),%rsi
+     f96:	48 89 d1             	mov    %rdx,%rcx
+     f99:	ba 01 00 00 00       	mov    $0x1,%edx
+     f9e:	48 89 c7             	mov    %rax,%rdi
+     fa1:	e8 ca f9 ff ff       	callq  970 <fread@plt>
+     fa6:	48 85 c0             	test   %rax,%rax
+     fa9:	75 24                	jne    fcf <bmp_read_image_data+0x17d>
+     fab:	48 83 bd 28 ff ff ff 	cmpq   $0x0,-0xd8(%rbp)
+     fb2:	00 
+     fb3:	0f 84 99 04 00 00    	je     1452 <bmp_read_image_data+0x600>
+     fb9:	48 8b 15 98 20 20 00 	mov    0x202098(%rip),%rdx        # 203058 <BMP_Error_Failed_to_Read_Image_Data>
+     fc0:	48 8b 85 28 ff ff ff 	mov    -0xd8(%rbp),%rax
+     fc7:	48 89 10             	mov    %rdx,(%rax)
+     fca:	e9 83 04 00 00       	jmpq   1452 <bmp_read_image_data+0x600>
+     fcf:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+     fd6:	8b 40 0a             	mov    0xa(%rax),%eax
+     fd9:	89 c2                	mov    %eax,%edx
+     fdb:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+     fe2:	8b 40 0e             	mov    0xe(%rax),%eax
+     fe5:	89 c1                	mov    %eax,%ecx
+     fe7:	48 8b 45 80          	mov    -0x80(%rbp),%rax
+     feb:	48 01 c8             	add    %rcx,%rax
+     fee:	48 29 c2             	sub    %rax,%rdx
+     ff1:	48 89 d0             	mov    %rdx,%rax
+     ff4:	48 89 45 a0          	mov    %rax,-0x60(%rbp)
+     ff8:	48 8b 45 a0          	mov    -0x60(%rbp),%rax
+     ffc:	48 3b 45 98          	cmp    -0x68(%rbp),%rax
+    1000:	72 24                	jb     1026 <bmp_read_image_data+0x1d4>
+    1002:	48 83 bd 28 ff ff ff 	cmpq   $0x0,-0xd8(%rbp)
+    1009:	00 
+    100a:	0f 84 45 04 00 00    	je     1455 <bmp_read_image_data+0x603>
+    1010:	48 8b 15 49 20 20 00 	mov    0x202049(%rip),%rdx        # 203060 <BMP_Error_Invalid_Pixel_Offset_or_DIB_Header_Size>
+    1017:	48 8b 85 28 ff ff ff 	mov    -0xd8(%rbp),%rax
+    101e:	48 89 10             	mov    %rdx,(%rax)
+    1021:	e9 2f 04 00 00       	jmpq   1455 <bmp_read_image_data+0x603>
+    1026:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    102d:	48 8b 90 40 01 00 00 	mov    0x140(%rax),%rdx
+    1034:	48 8b 45 a0          	mov    -0x60(%rbp),%rax
+    1038:	48 01 c2             	add    %rax,%rdx
+    103b:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1042:	48 89 90 48 01 00 00 	mov    %rdx,0x148(%rax)
+    1049:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1050:	8b 40 12             	mov    0x12(%rax),%eax
+    1053:	85 c0                	test   %eax,%eax
+    1055:	79 10                	jns    1067 <bmp_read_image_data+0x215>
+    1057:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    105e:	8b 40 12             	mov    0x12(%rax),%eax
+    1061:	f7 d8                	neg    %eax
+    1063:	48 98                	cltq   
+    1065:	eb 0c                	jmp    1073 <bmp_read_image_data+0x221>
+    1067:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    106e:	8b 40 12             	mov    0x12(%rax),%eax
+    1071:	48 98                	cltq   
+    1073:	48 89 45 a8          	mov    %rax,-0x58(%rbp)
+    1077:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    107e:	8b 40 16             	mov    0x16(%rax),%eax
+    1081:	85 c0                	test   %eax,%eax
+    1083:	79 10                	jns    1095 <bmp_read_image_data+0x243>
+    1085:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    108c:	8b 40 16             	mov    0x16(%rax),%eax
+    108f:	f7 d8                	neg    %eax
+    1091:	48 98                	cltq   
+    1093:	eb 0c                	jmp    10a1 <bmp_read_image_data+0x24f>
+    1095:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    109c:	8b 40 16             	mov    0x16(%rax),%eax
+    109f:	48 98                	cltq   
+    10a1:	48 89 45 b0          	mov    %rax,-0x50(%rbp)
+    10a5:	48 8b 45 a8          	mov    -0x58(%rbp),%rax
+    10a9:	48 c1 e0 02          	shl    $0x2,%rax
+    10ad:	48 89 45 b8          	mov    %rax,-0x48(%rbp)
+    10b1:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    10b8:	48 8b 80 80 01 00 00 	mov    0x180(%rax),%rax
+    10bf:	48 8b 55 a8          	mov    -0x58(%rbp),%rdx
+    10c3:	48 0f af c2          	imul   %rdx,%rax
+    10c7:	48 89 45 c0          	mov    %rax,-0x40(%rbp)
+    10cb:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    10d2:	0f b7 40 1c          	movzwl 0x1c(%rax),%eax
+    10d6:	0f b7 c0             	movzwl %ax,%eax
+    10d9:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+    10dd:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+    10e1:	48 0f af 45 a8       	imul   -0x58(%rbp),%rax
+    10e6:	48 83 c0 1f          	add    $0x1f,%rax
+    10ea:	48 c1 e8 05          	shr    $0x5,%rax
+    10ee:	48 c1 e0 02          	shl    $0x2,%rax
+    10f2:	48 2b 45 c0          	sub    -0x40(%rbp),%rax
+    10f6:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+    10fa:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1101:	48 8b 55 a8          	mov    -0x58(%rbp),%rdx
+    1105:	48 89 90 58 01 00 00 	mov    %rdx,0x158(%rax)
+    110c:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1113:	48 8b 55 b0          	mov    -0x50(%rbp),%rdx
+    1117:	48 89 90 60 01 00 00 	mov    %rdx,0x160(%rax)
+    111e:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1125:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+    1129:	48 89 90 68 01 00 00 	mov    %rdx,0x168(%rax)
+    1130:	48 8b 55 c0          	mov    -0x40(%rbp),%rdx
+    1134:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+    1138:	48 01 d0             	add    %rdx,%rax
+    113b:	48 0f af 45 b0       	imul   -0x50(%rbp),%rax
+    1140:	48 89 c2             	mov    %rax,%rdx
+    1143:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    114a:	48 89 90 70 01 00 00 	mov    %rdx,0x170(%rax)
+    1151:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1158:	48 8b 80 70 01 00 00 	mov    0x170(%rax),%rax
+    115f:	48 39 45 98          	cmp    %rax,-0x68(%rbp)
+    1163:	73 24                	jae    1189 <bmp_read_image_data+0x337>
+    1165:	48 83 bd 28 ff ff ff 	cmpq   $0x0,-0xd8(%rbp)
+    116c:	00 
+    116d:	0f 84 e5 02 00 00    	je     1458 <bmp_read_image_data+0x606>
+    1173:	48 8b 15 ee 1e 20 00 	mov    0x201eee(%rip),%rdx        # 203068 <BMP_Error_Failed_to_Calculate_Padding>
+    117a:	48 8b 85 28 ff ff ff 	mov    -0xd8(%rbp),%rax
+    1181:	48 89 10             	mov    %rdx,(%rax)
+    1184:	e9 cf 02 00 00       	jmpq   1458 <bmp_read_image_data+0x606>
+    1189:	48 8b 45 a8          	mov    -0x58(%rbp),%rax
+    118d:	48 8d 14 85 00 00 00 	lea    0x0(,%rax,4),%rdx
+    1194:	00 
+    1195:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+    1199:	48 01 c2             	add    %rax,%rdx
+    119c:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+    11a0:	48 0f af c2          	imul   %rdx,%rax
+    11a4:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+    11a8:	48 c7 45 d8 40 00 00 	movq   $0x40,-0x28(%rbp)
+    11af:	00 
+    11b0:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+    11b4:	48 83 e8 01          	sub    $0x1,%rax
+    11b8:	ba 00 00 00 00       	mov    $0x0,%edx
+    11bd:	48 f7 75 d8          	divq   -0x28(%rbp)
+    11c1:	48 8d 50 01          	lea    0x1(%rax),%rdx
+    11c5:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    11c9:	48 0f af c2          	imul   %rdx,%rax
+    11cd:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+    11d1:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    11d5:	48 01 45 e0          	add    %rax,-0x20(%rbp)
+    11d9:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    11dd:	48 89 c6             	mov    %rax,%rsi
+    11e0:	bf 40 00 00 00       	mov    $0x40,%edi
+    11e5:	e8 16 f8 ff ff       	callq  a00 <aligned_alloc@plt>
+    11ea:	48 89 c2             	mov    %rax,%rdx
+    11ed:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    11f4:	48 89 90 50 01 00 00 	mov    %rdx,0x150(%rax)
+    11fb:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1202:	48 8b 80 50 01 00 00 	mov    0x150(%rax),%rax
+    1209:	48 85 c0             	test   %rax,%rax
+    120c:	75 24                	jne    1232 <bmp_read_image_data+0x3e0>
+    120e:	48 83 bd 28 ff ff ff 	cmpq   $0x0,-0xd8(%rbp)
+    1215:	00 
+    1216:	0f 84 3f 02 00 00    	je     145b <bmp_read_image_data+0x609>
+    121c:	48 8b 15 2d 1e 20 00 	mov    0x201e2d(%rip),%rdx        # 203050 <BMP_Error_Not_Enough_Memory_to_Read>
+    1223:	48 8b 85 28 ff ff ff 	mov    -0xd8(%rbp),%rax
+    122a:	48 89 10             	mov    %rdx,(%rax)
+    122d:	e9 29 02 00 00       	jmpq   145b <bmp_read_image_data+0x609>
+    1232:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1239:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+    123d:	48 89 90 78 01 00 00 	mov    %rdx,0x178(%rax)
+    1244:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    124b:	48 8b 80 80 01 00 00 	mov    0x180(%rax),%rax
+    1252:	48 83 f8 04          	cmp    $0x4,%rax
+    1256:	0f 85 9b 00 00 00    	jne    12f7 <bmp_read_image_data+0x4a5>
+    125c:	48 c7 85 48 ff ff ff 	movq   $0x0,-0xb8(%rbp)
+    1263:	00 00 00 00 
+    1267:	48 c7 85 50 ff ff ff 	movq   $0x0,-0xb0(%rbp)
+    126e:	00 00 00 00 
+    1272:	48 c7 85 58 ff ff ff 	movq   $0x0,-0xa8(%rbp)
+    1279:	00 00 00 00 
+    127d:	eb 66                	jmp    12e5 <bmp_read_image_data+0x493>
+    127f:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1286:	48 8b 90 48 01 00 00 	mov    0x148(%rax),%rdx
+    128d:	48 8b 85 50 ff ff ff 	mov    -0xb0(%rbp),%rax
+    1294:	48 8d 34 02          	lea    (%rdx,%rax,1),%rsi
+    1298:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    129f:	48 8b 90 50 01 00 00 	mov    0x150(%rax),%rdx
+    12a6:	48 8b 85 58 ff ff ff 	mov    -0xa8(%rbp),%rax
+    12ad:	48 8d 0c 02          	lea    (%rdx,%rax,1),%rcx
+    12b1:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+    12b5:	48 89 c2             	mov    %rax,%rdx
+    12b8:	48 89 cf             	mov    %rcx,%rdi
+    12bb:	e8 00 f7 ff ff       	callq  9c0 <memcpy@plt>
+    12c0:	48 83 85 48 ff ff ff 	addq   $0x1,-0xb8(%rbp)
+    12c7:	01 
+    12c8:	48 8b 55 c0          	mov    -0x40(%rbp),%rdx
+    12cc:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+    12d0:	48 01 d0             	add    %rdx,%rax
+    12d3:	48 01 85 50 ff ff ff 	add    %rax,-0xb0(%rbp)
+    12da:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+    12de:	48 01 85 58 ff ff ff 	add    %rax,-0xa8(%rbp)
+    12e5:	48 8b 85 48 ff ff ff 	mov    -0xb8(%rbp),%rax
+    12ec:	48 3b 45 b0          	cmp    -0x50(%rbp),%rax
+    12f0:	72 8d                	jb     127f <bmp_read_image_data+0x42d>
+    12f2:	e9 0a 01 00 00       	jmpq   1401 <bmp_read_image_data+0x5af>
+    12f7:	48 c7 85 60 ff ff ff 	movq   $0x0,-0xa0(%rbp)
+    12fe:	00 00 00 00 
+    1302:	48 c7 85 68 ff ff ff 	movq   $0x0,-0x98(%rbp)
+    1309:	00 00 00 00 
+    130d:	48 c7 85 70 ff ff ff 	movq   $0x0,-0x90(%rbp)
+    1314:	00 00 00 00 
+    1318:	e9 d3 00 00 00       	jmpq   13f0 <bmp_read_image_data+0x59e>
+    131d:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1324:	48 8b 90 48 01 00 00 	mov    0x148(%rax),%rdx
+    132b:	48 8b 85 68 ff ff ff 	mov    -0x98(%rbp),%rax
+    1332:	48 01 d0             	add    %rdx,%rax
+    1335:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+    1339:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1340:	48 8b 90 50 01 00 00 	mov    0x150(%rax),%rdx
+    1347:	48 8b 85 70 ff ff ff 	mov    -0x90(%rbp),%rax
+    134e:	48 01 d0             	add    %rdx,%rax
+    1351:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+    1355:	c7 85 40 ff ff ff 00 	movl   $0x0,-0xc0(%rbp)
+    135c:	00 00 00 
+    135f:	c7 85 44 ff ff ff 00 	movl   $0x0,-0xbc(%rbp)
+    1366:	00 00 00 
+    1369:	eb 52                	jmp    13bd <bmp_read_image_data+0x56b>
+    136b:	8b 85 44 ff ff ff    	mov    -0xbc(%rbp),%eax
+    1371:	48 63 d0             	movslq %eax,%rdx
+    1374:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+    1378:	48 01 d0             	add    %rdx,%rax
+    137b:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+    137f:	8b 85 40 ff ff ff    	mov    -0xc0(%rbp),%eax
+    1385:	48 63 d0             	movslq %eax,%rdx
+    1388:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+    138c:	48 8d 0c 02          	lea    (%rdx,%rax,1),%rcx
+    1390:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    1394:	ba 03 00 00 00       	mov    $0x3,%edx
+    1399:	48 89 ce             	mov    %rcx,%rsi
+    139c:	48 89 c7             	mov    %rax,%rdi
+    139f:	e8 1c f6 ff ff       	callq  9c0 <memcpy@plt>
+    13a4:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    13a8:	48 83 c0 03          	add    $0x3,%rax
+    13ac:	c6 00 ff             	movb   $0xff,(%rax)
+    13af:	83 85 40 ff ff ff 03 	addl   $0x3,-0xc0(%rbp)
+    13b6:	83 85 44 ff ff ff 04 	addl   $0x4,-0xbc(%rbp)
+    13bd:	8b 85 40 ff ff ff    	mov    -0xc0(%rbp),%eax
+    13c3:	48 98                	cltq   
+    13c5:	48 39 45 c0          	cmp    %rax,-0x40(%rbp)
+    13c9:	77 a0                	ja     136b <bmp_read_image_data+0x519>
+    13cb:	48 83 85 60 ff ff ff 	addq   $0x1,-0xa0(%rbp)
+    13d2:	01 
+    13d3:	48 8b 55 c0          	mov    -0x40(%rbp),%rdx
+    13d7:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+    13db:	48 01 d0             	add    %rdx,%rax
+    13de:	48 01 85 68 ff ff ff 	add    %rax,-0x98(%rbp)
+    13e5:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+    13e9:	48 01 85 70 ff ff ff 	add    %rax,-0x90(%rbp)
+    13f0:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    13f7:	48 3b 45 b0          	cmp    -0x50(%rbp),%rax
+    13fb:	0f 82 1c ff ff ff    	jb     131d <bmp_read_image_data+0x4cb>
+    1401:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+    1405:	48 89 85 78 ff ff ff 	mov    %rax,-0x88(%rbp)
+    140c:	eb 23                	jmp    1431 <bmp_read_image_data+0x5df>
+    140e:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1415:	48 8b 90 50 01 00 00 	mov    0x150(%rax),%rdx
+    141c:	48 8b 85 78 ff ff ff 	mov    -0x88(%rbp),%rax
+    1423:	48 01 d0             	add    %rdx,%rax
+    1426:	c6 00 00             	movb   $0x0,(%rax)
+    1429:	48 83 85 78 ff ff ff 	addq   $0x1,-0x88(%rbp)
+    1430:	01 
+    1431:	48 8b 85 78 ff ff ff 	mov    -0x88(%rbp),%rax
+    1438:	48 3b 45 e0          	cmp    -0x20(%rbp),%rax
+    143c:	72 d0                	jb     140e <bmp_read_image_data+0x5bc>
+    143e:	eb 0d                	jmp    144d <bmp_read_image_data+0x5fb>
+    1440:	90                   	nop
+    1441:	e9 8c 00 00 00       	jmpq   14d2 <bmp_read_image_data+0x680>
+    1446:	90                   	nop
+    1447:	e9 86 00 00 00       	jmpq   14d2 <bmp_read_image_data+0x680>
+    144c:	90                   	nop
+    144d:	e9 80 00 00 00       	jmpq   14d2 <bmp_read_image_data+0x680>
+    1452:	90                   	nop
+    1453:	eb 07                	jmp    145c <bmp_read_image_data+0x60a>
+    1455:	90                   	nop
+    1456:	eb 04                	jmp    145c <bmp_read_image_data+0x60a>
+    1458:	90                   	nop
+    1459:	eb 01                	jmp    145c <bmp_read_image_data+0x60a>
+    145b:	90                   	nop
+    145c:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1463:	48 8b 80 40 01 00 00 	mov    0x140(%rax),%rax
+    146a:	48 85 c0             	test   %rax,%rax
+    146d:	74 28                	je     1497 <bmp_read_image_data+0x645>
+    146f:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    1476:	48 8b 80 40 01 00 00 	mov    0x140(%rax),%rax
+    147d:	48 89 c7             	mov    %rax,%rdi
+    1480:	e8 db f4 ff ff       	callq  960 <free@plt>
+    1485:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    148c:	48 c7 80 40 01 00 00 	movq   $0x0,0x140(%rax)
+    1493:	00 00 00 00 
+    1497:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    149e:	48 8b 80 50 01 00 00 	mov    0x150(%rax),%rax
+    14a5:	48 85 c0             	test   %rax,%rax
+    14a8:	74 28                	je     14d2 <bmp_read_image_data+0x680>
+    14aa:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    14b1:	48 8b 80 50 01 00 00 	mov    0x150(%rax),%rax
+    14b8:	48 89 c7             	mov    %rax,%rdi
+    14bb:	e8 a0 f4 ff ff       	callq  960 <free@plt>
+    14c0:	48 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%rax
+    14c7:	48 c7 80 50 01 00 00 	movq   $0x0,0x150(%rax)
+    14ce:	00 00 00 00 
+    14d2:	c9                   	leaveq 
+    14d3:	c3                   	retq   
+
+00000000000014d4 <bmp_write_image_headers>:
+    14d4:	55                   	push   %rbp
+    14d5:	48 89 e5             	mov    %rsp,%rbp
+    14d8:	48 83 ec 30          	sub    $0x30,%rsp
+    14dc:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+    14e0:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+    14e4:	48 89 55 d8          	mov    %rdx,-0x28(%rbp)
+    14e8:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    14ec:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+    14f3:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+    14f8:	75 1e                	jne    1518 <bmp_write_image_headers+0x44>
+    14fa:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+    14ff:	0f 84 c1 00 00 00    	je     15c6 <bmp_write_image_headers+0xf2>
+    1505:	48 8b 15 3c 1b 20 00 	mov    0x201b3c(%rip),%rdx        # 203048 <BMP_Error_Invalid_Image_Structure>
+    150c:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    1510:	48 89 10             	mov    %rdx,(%rax)
+    1513:	e9 ae 00 00 00       	jmpq   15c6 <bmp_write_image_headers+0xf2>
+    1518:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+    151d:	75 1e                	jne    153d <bmp_write_image_headers+0x69>
+    151f:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+    1524:	0f 84 9f 00 00 00    	je     15c9 <bmp_write_image_headers+0xf5>
+    152a:	48 8b 15 df 1a 20 00 	mov    0x201adf(%rip),%rdx        # 203010 <BMP_Error_Invalid_File_Descriptor>
+    1531:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    1535:	48 89 10             	mov    %rdx,(%rax)
+    1538:	e9 8c 00 00 00       	jmpq   15c9 <bmp_write_image_headers+0xf5>
+    153d:	48 c7 45 f0 0e 00 00 	movq   $0xe,-0x10(%rbp)
+    1544:	00 
+    1545:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    1549:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+    154d:	48 8b 75 f0          	mov    -0x10(%rbp),%rsi
+    1551:	48 89 d1             	mov    %rdx,%rcx
+    1554:	ba 01 00 00 00       	mov    $0x1,%edx
+    1559:	48 89 c7             	mov    %rax,%rdi
+    155c:	e8 8f f4 ff ff       	callq  9f0 <fwrite@plt>
+    1561:	48 85 c0             	test   %rax,%rax
+    1564:	75 17                	jne    157d <bmp_write_image_headers+0xa9>
+    1566:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+    156b:	74 5f                	je     15cc <bmp_write_image_headers+0xf8>
+    156d:	48 8b 15 fc 1a 20 00 	mov    0x201afc(%rip),%rdx        # 203070 <BMP_Error_Failed_to_Write_File_Header>
+    1574:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    1578:	48 89 10             	mov    %rdx,(%rax)
+    157b:	eb 4f                	jmp    15cc <bmp_write_image_headers+0xf8>
+    157d:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    1581:	8b 40 0e             	mov    0xe(%rax),%eax
+    1584:	89 c0                	mov    %eax,%eax
+    1586:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+    158a:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    158e:	48 8d 78 0e          	lea    0xe(%rax),%rdi
+    1592:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+    1596:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    159a:	48 89 d1             	mov    %rdx,%rcx
+    159d:	ba 01 00 00 00       	mov    $0x1,%edx
+    15a2:	48 89 c6             	mov    %rax,%rsi
+    15a5:	e8 46 f4 ff ff       	callq  9f0 <fwrite@plt>
+    15aa:	48 85 c0             	test   %rax,%rax
+    15ad:	75 20                	jne    15cf <bmp_write_image_headers+0xfb>
+    15af:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+    15b4:	74 1c                	je     15d2 <bmp_write_image_headers+0xfe>
+    15b6:	48 8b 15 bb 1a 20 00 	mov    0x201abb(%rip),%rdx        # 203078 <BMP_Error_Failed_to_Write_DIB_Header>
+    15bd:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    15c1:	48 89 10             	mov    %rdx,(%rax)
+    15c4:	eb 0c                	jmp    15d2 <bmp_write_image_headers+0xfe>
+    15c6:	90                   	nop
+    15c7:	eb 0a                	jmp    15d3 <bmp_write_image_headers+0xff>
+    15c9:	90                   	nop
+    15ca:	eb 07                	jmp    15d3 <bmp_write_image_headers+0xff>
+    15cc:	90                   	nop
+    15cd:	eb 04                	jmp    15d3 <bmp_write_image_headers+0xff>
+    15cf:	90                   	nop
+    15d0:	eb 01                	jmp    15d3 <bmp_write_image_headers+0xff>
+    15d2:	90                   	nop
+    15d3:	90                   	nop
+    15d4:	c9                   	leaveq 
+    15d5:	c3                   	retq   
+
+00000000000015d6 <bmp_write_image_data>:
+    15d6:	55                   	push   %rbp
+    15d7:	48 89 e5             	mov    %rsp,%rbp
+    15da:	48 81 ec b0 00 00 00 	sub    $0xb0,%rsp
+    15e1:	48 89 bd 68 ff ff ff 	mov    %rdi,-0x98(%rbp)
+    15e8:	48 89 b5 60 ff ff ff 	mov    %rsi,-0xa0(%rbp)
+    15ef:	48 89 95 58 ff ff ff 	mov    %rdx,-0xa8(%rbp)
+    15f6:	48 8b 85 58 ff ff ff 	mov    -0xa8(%rbp),%rax
+    15fd:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+    1604:	48 83 bd 60 ff ff ff 	cmpq   $0x0,-0xa0(%rbp)
+    160b:	00 
+    160c:	75 24                	jne    1632 <bmp_write_image_data+0x5c>
+    160e:	48 83 bd 58 ff ff ff 	cmpq   $0x0,-0xa8(%rbp)
+    1615:	00 
+    1616:	0f 84 a3 02 00 00    	je     18bf <bmp_write_image_data+0x2e9>
+    161c:	48 8b 15 25 1a 20 00 	mov    0x201a25(%rip),%rdx        # 203048 <BMP_Error_Invalid_Image_Structure>
+    1623:	48 8b 85 58 ff ff ff 	mov    -0xa8(%rbp),%rax
+    162a:	48 89 10             	mov    %rdx,(%rax)
+    162d:	e9 8d 02 00 00       	jmpq   18bf <bmp_write_image_data+0x2e9>
+    1632:	48 83 bd 68 ff ff ff 	cmpq   $0x0,-0x98(%rbp)
+    1639:	00 
+    163a:	75 24                	jne    1660 <bmp_write_image_data+0x8a>
+    163c:	48 83 bd 58 ff ff ff 	cmpq   $0x0,-0xa8(%rbp)
+    1643:	00 
+    1644:	0f 84 78 02 00 00    	je     18c2 <bmp_write_image_data+0x2ec>
+    164a:	48 8b 15 bf 19 20 00 	mov    0x2019bf(%rip),%rdx        # 203010 <BMP_Error_Invalid_File_Descriptor>
+    1651:	48 8b 85 58 ff ff ff 	mov    -0xa8(%rbp),%rax
+    1658:	48 89 10             	mov    %rdx,(%rax)
+    165b:	e9 62 02 00 00       	jmpq   18c2 <bmp_write_image_data+0x2ec>
+    1660:	48 c7 45 a8 0e 00 00 	movq   $0xe,-0x58(%rbp)
+    1667:	00 
+    1668:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    166f:	8b 40 0e             	mov    0xe(%rax),%eax
+    1672:	89 c0                	mov    %eax,%eax
+    1674:	48 89 45 b0          	mov    %rax,-0x50(%rbp)
+    1678:	48 8b 55 a8          	mov    -0x58(%rbp),%rdx
+    167c:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+    1680:	48 01 d0             	add    %rdx,%rax
+    1683:	48 89 45 b8          	mov    %rax,-0x48(%rbp)
+    1687:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    168e:	8b 40 02             	mov    0x2(%rax),%eax
+    1691:	89 c0                	mov    %eax,%eax
+    1693:	48 2b 45 b8          	sub    -0x48(%rbp),%rax
+    1697:	48 89 45 c0          	mov    %rax,-0x40(%rbp)
+    169b:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    16a2:	48 8b 80 68 01 00 00 	mov    0x168(%rax),%rax
+    16a9:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+    16ad:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    16b4:	48 8b 80 58 01 00 00 	mov    0x158(%rax),%rax
+    16bb:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+    16bf:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    16c6:	48 8b 80 60 01 00 00 	mov    0x160(%rax),%rax
+    16cd:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+    16d1:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+    16d5:	48 c1 e0 02          	shl    $0x2,%rax
+    16d9:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+    16dd:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    16e4:	48 8b 80 80 01 00 00 	mov    0x180(%rax),%rax
+    16eb:	48 8b 55 d0          	mov    -0x30(%rbp),%rdx
+    16ef:	48 0f af c2          	imul   %rdx,%rax
+    16f3:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+    16f7:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    16fe:	48 8b 80 80 01 00 00 	mov    0x180(%rax),%rax
+    1705:	48 83 f8 04          	cmp    $0x4,%rax
+    1709:	0f 85 89 00 00 00    	jne    1798 <bmp_write_image_data+0x1c2>
+    170f:	48 c7 85 78 ff ff ff 	movq   $0x0,-0x88(%rbp)
+    1716:	00 00 00 00 
+    171a:	48 c7 45 80 00 00 00 	movq   $0x0,-0x80(%rbp)
+    1721:	00 
+    1722:	48 c7 45 88 00 00 00 	movq   $0x0,-0x78(%rbp)
+    1729:	00 
+    172a:	eb 5a                	jmp    1786 <bmp_write_image_data+0x1b0>
+    172c:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    1733:	48 8b 90 50 01 00 00 	mov    0x150(%rax),%rdx
+    173a:	48 8b 45 80          	mov    -0x80(%rbp),%rax
+    173e:	48 8d 34 02          	lea    (%rdx,%rax,1),%rsi
+    1742:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    1749:	48 8b 90 48 01 00 00 	mov    0x148(%rax),%rdx
+    1750:	48 8b 45 88          	mov    -0x78(%rbp),%rax
+    1754:	48 8d 0c 02          	lea    (%rdx,%rax,1),%rcx
+    1758:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+    175c:	48 89 c2             	mov    %rax,%rdx
+    175f:	48 89 cf             	mov    %rcx,%rdi
+    1762:	e8 59 f2 ff ff       	callq  9c0 <memcpy@plt>
+    1767:	48 83 85 78 ff ff ff 	addq   $0x1,-0x88(%rbp)
+    176e:	01 
+    176f:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+    1773:	48 01 45 80          	add    %rax,-0x80(%rbp)
+    1777:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+    177b:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+    177f:	48 01 d0             	add    %rdx,%rax
+    1782:	48 01 45 88          	add    %rax,-0x78(%rbp)
+    1786:	48 8b 85 78 ff ff ff 	mov    -0x88(%rbp),%rax
+    178d:	48 3b 45 d8          	cmp    -0x28(%rbp),%rax
+    1791:	72 99                	jb     172c <bmp_write_image_data+0x156>
+    1793:	e9 dc 00 00 00       	jmpq   1874 <bmp_write_image_data+0x29e>
+    1798:	48 c7 45 90 00 00 00 	movq   $0x0,-0x70(%rbp)
+    179f:	00 
+    17a0:	48 c7 45 98 00 00 00 	movq   $0x0,-0x68(%rbp)
+    17a7:	00 
+    17a8:	48 c7 45 a0 00 00 00 	movq   $0x0,-0x60(%rbp)
+    17af:	00 
+    17b0:	e9 b1 00 00 00       	jmpq   1866 <bmp_write_image_data+0x290>
+    17b5:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    17bc:	48 8b 90 50 01 00 00 	mov    0x150(%rax),%rdx
+    17c3:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+    17c7:	48 01 d0             	add    %rdx,%rax
+    17ca:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+    17ce:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    17d5:	48 8b 90 48 01 00 00 	mov    0x148(%rax),%rdx
+    17dc:	48 8b 45 a0          	mov    -0x60(%rbp),%rax
+    17e0:	48 01 d0             	add    %rdx,%rax
+    17e3:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+    17e7:	c7 85 70 ff ff ff 00 	movl   $0x0,-0x90(%rbp)
+    17ee:	00 00 00 
+    17f1:	c7 85 74 ff ff ff 00 	movl   $0x0,-0x8c(%rbp)
+    17f8:	00 00 00 
+    17fb:	eb 3f                	jmp    183c <bmp_write_image_data+0x266>
+    17fd:	8b 85 74 ff ff ff    	mov    -0x8c(%rbp),%eax
+    1803:	48 63 d0             	movslq %eax,%rdx
+    1806:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+    180a:	48 8d 0c 02          	lea    (%rdx,%rax,1),%rcx
+    180e:	8b 85 70 ff ff ff    	mov    -0x90(%rbp),%eax
+    1814:	48 63 d0             	movslq %eax,%rdx
+    1817:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    181b:	48 01 d0             	add    %rdx,%rax
+    181e:	ba 03 00 00 00       	mov    $0x3,%edx
+    1823:	48 89 ce             	mov    %rcx,%rsi
+    1826:	48 89 c7             	mov    %rax,%rdi
+    1829:	e8 92 f1 ff ff       	callq  9c0 <memcpy@plt>
+    182e:	83 85 70 ff ff ff 03 	addl   $0x3,-0x90(%rbp)
+    1835:	83 85 74 ff ff ff 04 	addl   $0x4,-0x8c(%rbp)
+    183c:	8b 85 70 ff ff ff    	mov    -0x90(%rbp),%eax
+    1842:	48 98                	cltq   
+    1844:	48 39 45 e8          	cmp    %rax,-0x18(%rbp)
+    1848:	77 b3                	ja     17fd <bmp_write_image_data+0x227>
+    184a:	48 83 45 90 01       	addq   $0x1,-0x70(%rbp)
+    184f:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    1853:	48 01 45 98          	add    %rax,-0x68(%rbp)
+    1857:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+    185b:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+    185f:	48 01 d0             	add    %rdx,%rax
+    1862:	48 01 45 a0          	add    %rax,-0x60(%rbp)
+    1866:	48 8b 45 90          	mov    -0x70(%rbp),%rax
+    186a:	48 3b 45 d8          	cmp    -0x28(%rbp),%rax
+    186e:	0f 82 41 ff ff ff    	jb     17b5 <bmp_write_image_data+0x1df>
+    1874:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    187b:	48 8b 80 40 01 00 00 	mov    0x140(%rax),%rax
+    1882:	48 8b 95 68 ff ff ff 	mov    -0x98(%rbp),%rdx
+    1889:	48 8b 75 c0          	mov    -0x40(%rbp),%rsi
+    188d:	48 89 d1             	mov    %rdx,%rcx
+    1890:	ba 01 00 00 00       	mov    $0x1,%edx
+    1895:	48 89 c7             	mov    %rax,%rdi
+    1898:	e8 53 f1 ff ff       	callq  9f0 <fwrite@plt>
+    189d:	48 85 c0             	test   %rax,%rax
+    18a0:	75 23                	jne    18c5 <bmp_write_image_data+0x2ef>
+    18a2:	48 83 bd 58 ff ff ff 	cmpq   $0x0,-0xa8(%rbp)
+    18a9:	00 
+    18aa:	74 1c                	je     18c8 <bmp_write_image_data+0x2f2>
+    18ac:	48 8b 15 cd 17 20 00 	mov    0x2017cd(%rip),%rdx        # 203080 <BMP_Error_Failed_to_Write_Image_Data>
+    18b3:	48 8b 85 58 ff ff ff 	mov    -0xa8(%rbp),%rax
+    18ba:	48 89 10             	mov    %rdx,(%rax)
+    18bd:	eb 09                	jmp    18c8 <bmp_write_image_data+0x2f2>
+    18bf:	90                   	nop
+    18c0:	eb 07                	jmp    18c9 <bmp_write_image_data+0x2f3>
+    18c2:	90                   	nop
+    18c3:	eb 04                	jmp    18c9 <bmp_write_image_data+0x2f3>
+    18c5:	90                   	nop
+    18c6:	eb 01                	jmp    18c9 <bmp_write_image_data+0x2f3>
+    18c8:	90                   	nop
+    18c9:	90                   	nop
+    18ca:	c9                   	leaveq 
+    18cb:	c3                   	retq   
+
+00000000000018cc <main>:
+    18cc:	4c 8d 54 24 08       	lea    0x8(%rsp),%r10
+    18d1:	48 83 e4 c0          	and    $0xffffffffffffffc0,%rsp
+    18d5:	41 ff 72 f8          	pushq  -0x8(%r10)
+    18d9:	55                   	push   %rbp
+    18da:	48 89 e5             	mov    %rsp,%rbp
+    18dd:	41 52                	push   %r10
+    18df:	48 81 ec e8 08 00 00 	sub    $0x8e8,%rsp
+    18e6:	89 bd 2c f7 ff ff    	mov    %edi,-0x8d4(%rbp)
+    18ec:	48 89 b5 20 f7 ff ff 	mov    %rsi,-0x8e0(%rbp)
+    18f3:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    18fa:	00 00 
+    18fc:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+    1900:	31 c0                	xor    %eax,%eax
+    1902:	c7 85 3c f7 ff ff 01 	movl   $0x1,-0x8c4(%rbp)
+    1909:	00 00 00 
+    190c:	83 bd 2c f7 ff ff 02 	cmpl   $0x2,-0x8d4(%rbp)
+    1913:	7f 30                	jg     1945 <main+0x79>
+    1915:	48 8b 85 20 f7 ff ff 	mov    -0x8e0(%rbp),%rax
+    191c:	48 8b 10             	mov    (%rax),%rdx
+    191f:	48 8b 05 7a 17 20 00 	mov    0x20177a(%rip),%rax        # 2030a0 <stderr@@GLIBC_2.2.5>
+    1926:	48 8d 35 c3 09 00 00 	lea    0x9c3(%rip),%rsi        # 22f0 <BMP_Second_Magic_Byte+0x4>
+    192d:	48 89 c7             	mov    %rax,%rdi
+    1930:	b8 00 00 00 00       	mov    $0x0,%eax
+    1935:	e8 76 f0 ff ff       	callq  9b0 <fprintf@plt>
+    193a:	8b 85 3c f7 ff ff    	mov    -0x8c4(%rbp),%eax
+    1940:	e9 ab 06 00 00       	jmpq   1ff0 <main+0x724>
+    1945:	48 8b 85 20 f7 ff ff 	mov    -0x8e0(%rbp),%rax
+    194c:	48 8b 40 08          	mov    0x8(%rax),%rax
+    1950:	48 89 85 58 f7 ff ff 	mov    %rax,-0x8a8(%rbp)
+    1957:	48 8b 85 20 f7 ff ff 	mov    -0x8e0(%rbp),%rax
+    195e:	48 8b 40 10          	mov    0x10(%rax),%rax
+    1962:	48 89 85 60 f7 ff ff 	mov    %rax,-0x8a0(%rbp)
+    1969:	48 c7 85 68 f7 ff ff 	movq   $0x0,-0x898(%rbp)
+    1970:	00 00 00 00 
+    1974:	48 c7 85 48 f7 ff ff 	movq   $0x0,-0x8b8(%rbp)
+    197b:	00 00 00 00 
+    197f:	48 8d 85 40 fe ff ff 	lea    -0x1c0(%rbp),%rax
+    1986:	48 89 c7             	mov    %rax,%rdi
+    1989:	e8 9c f1 ff ff       	callq  b2a <bmp_init_image_structure>
+    198e:	48 8b 85 58 f7 ff ff 	mov    -0x8a8(%rbp),%rax
+    1995:	48 8d 35 7a 09 00 00 	lea    0x97a(%rip),%rsi        # 2316 <BMP_Second_Magic_Byte+0x2a>
+    199c:	48 89 c7             	mov    %rax,%rdi
+    199f:	e8 3c f0 ff ff       	callq  9e0 <fopen@plt>
+    19a4:	48 89 85 68 f7 ff ff 	mov    %rax,-0x898(%rbp)
+    19ab:	48 83 bd 68 f7 ff ff 	cmpq   $0x0,-0x898(%rbp)
+    19b2:	00 
+    19b3:	75 27                	jne    19dc <main+0x110>
+    19b5:	48 8b 05 e4 16 20 00 	mov    0x2016e4(%rip),%rax        # 2030a0 <stderr@@GLIBC_2.2.5>
+    19bc:	48 8b 95 58 f7 ff ff 	mov    -0x8a8(%rbp),%rdx
+    19c3:	48 8d 35 4e 09 00 00 	lea    0x94e(%rip),%rsi        # 2318 <BMP_Second_Magic_Byte+0x2c>
+    19ca:	48 89 c7             	mov    %rax,%rdi
+    19cd:	b8 00 00 00 00       	mov    $0x0,%eax
+    19d2:	e8 d9 ef ff ff       	callq  9b0 <fprintf@plt>
+    19d7:	e9 b7 05 00 00       	jmpq   1f93 <main+0x6c7>
+    19dc:	48 8d 95 40 f7 ff ff 	lea    -0x8c0(%rbp),%rdx
+    19e3:	48 8d 8d 40 fe ff ff 	lea    -0x1c0(%rbp),%rcx
+    19ea:	48 8b 85 68 f7 ff ff 	mov    -0x898(%rbp),%rax
+    19f1:	48 89 ce             	mov    %rcx,%rsi
+    19f4:	48 89 c7             	mov    %rax,%rdi
+    19f7:	e8 d4 f1 ff ff       	callq  bd0 <bmp_open_image_headers>
+    19fc:	48 8b 85 40 f7 ff ff 	mov    -0x8c0(%rbp),%rax
+    1a03:	48 85 c0             	test   %rax,%rax
+    1a06:	74 2e                	je     1a36 <main+0x16a>
+    1a08:	48 8b 8d 40 f7 ff ff 	mov    -0x8c0(%rbp),%rcx
+    1a0f:	48 8b 05 8a 16 20 00 	mov    0x20168a(%rip),%rax        # 2030a0 <stderr@@GLIBC_2.2.5>
+    1a16:	48 8b 95 58 f7 ff ff 	mov    -0x8a8(%rbp),%rdx
+    1a1d:	48 8d 35 24 09 00 00 	lea    0x924(%rip),%rsi        # 2348 <BMP_Second_Magic_Byte+0x5c>
+    1a24:	48 89 c7             	mov    %rax,%rdi
+    1a27:	b8 00 00 00 00       	mov    $0x0,%eax
+    1a2c:	e8 7f ef ff ff       	callq  9b0 <fprintf@plt>
+    1a31:	e9 5d 05 00 00       	jmpq   1f93 <main+0x6c7>
+    1a36:	48 8d 95 40 f7 ff ff 	lea    -0x8c0(%rbp),%rdx
+    1a3d:	48 8d 8d 40 fe ff ff 	lea    -0x1c0(%rbp),%rcx
+    1a44:	48 8b 85 68 f7 ff ff 	mov    -0x898(%rbp),%rax
+    1a4b:	48 89 ce             	mov    %rcx,%rsi
+    1a4e:	48 89 c7             	mov    %rax,%rdi
+    1a51:	e8 fc f3 ff ff       	callq  e52 <bmp_read_image_data>
+    1a56:	48 8b 85 40 f7 ff ff 	mov    -0x8c0(%rbp),%rax
+    1a5d:	48 85 c0             	test   %rax,%rax
+    1a60:	74 2e                	je     1a90 <main+0x1c4>
+    1a62:	48 8b 8d 40 f7 ff ff 	mov    -0x8c0(%rbp),%rcx
+    1a69:	48 8b 05 30 16 20 00 	mov    0x201630(%rip),%rax        # 2030a0 <stderr@@GLIBC_2.2.5>
+    1a70:	48 8b 95 58 f7 ff ff 	mov    -0x8a8(%rbp),%rdx
+    1a77:	48 8d 35 ca 08 00 00 	lea    0x8ca(%rip),%rsi        # 2348 <BMP_Second_Magic_Byte+0x5c>
+    1a7e:	48 89 c7             	mov    %rax,%rdi
+    1a81:	b8 00 00 00 00       	mov    $0x0,%eax
+    1a86:	e8 25 ef ff ff       	callq  9b0 <fprintf@plt>
+    1a8b:	e9 03 05 00 00       	jmpq   1f93 <main+0x6c7>
+    1a90:	48 8b 85 60 f7 ff ff 	mov    -0x8a0(%rbp),%rax
+    1a97:	48 8d 35 d1 08 00 00 	lea    0x8d1(%rip),%rsi        # 236f <BMP_Second_Magic_Byte+0x83>
+    1a9e:	48 89 c7             	mov    %rax,%rdi
+    1aa1:	e8 3a ef ff ff       	callq  9e0 <fopen@plt>
+    1aa6:	48 89 85 48 f7 ff ff 	mov    %rax,-0x8b8(%rbp)
+    1aad:	48 83 bd 48 f7 ff ff 	cmpq   $0x0,-0x8b8(%rbp)
+    1ab4:	00 
+    1ab5:	75 27                	jne    1ade <main+0x212>
+    1ab7:	48 8b 05 e2 15 20 00 	mov    0x2015e2(%rip),%rax        # 2030a0 <stderr@@GLIBC_2.2.5>
+    1abe:	48 8b 95 60 f7 ff ff 	mov    -0x8a0(%rbp),%rdx
+    1ac5:	48 8d 35 ac 08 00 00 	lea    0x8ac(%rip),%rsi        # 2378 <BMP_Second_Magic_Byte+0x8c>
+    1acc:	48 89 c7             	mov    %rax,%rdi
+    1acf:	b8 00 00 00 00       	mov    $0x0,%eax
+    1ad4:	e8 d7 ee ff ff       	callq  9b0 <fprintf@plt>
+    1ad9:	e9 b5 04 00 00       	jmpq   1f93 <main+0x6c7>
+    1ade:	48 8d 95 40 f7 ff ff 	lea    -0x8c0(%rbp),%rdx
+    1ae5:	48 8d 8d 40 fe ff ff 	lea    -0x1c0(%rbp),%rcx
+    1aec:	48 8b 85 48 f7 ff ff 	mov    -0x8b8(%rbp),%rax
+    1af3:	48 89 ce             	mov    %rcx,%rsi
+    1af6:	48 89 c7             	mov    %rax,%rdi
+    1af9:	e8 d6 f9 ff ff       	callq  14d4 <bmp_write_image_headers>
+    1afe:	48 8b 85 40 f7 ff ff 	mov    -0x8c0(%rbp),%rax
+    1b05:	48 85 c0             	test   %rax,%rax
+    1b08:	74 2e                	je     1b38 <main+0x26c>
+    1b0a:	48 8b 8d 40 f7 ff ff 	mov    -0x8c0(%rbp),%rcx
+    1b11:	48 8b 05 88 15 20 00 	mov    0x201588(%rip),%rax        # 2030a0 <stderr@@GLIBC_2.2.5>
+    1b18:	48 8b 95 60 f7 ff ff 	mov    -0x8a0(%rbp),%rdx
+    1b1f:	48 8d 35 22 08 00 00 	lea    0x822(%rip),%rsi        # 2348 <BMP_Second_Magic_Byte+0x5c>
+    1b26:	48 89 c7             	mov    %rax,%rdi
+    1b29:	b8 00 00 00 00       	mov    $0x0,%eax
+    1b2e:	e8 7d ee ff ff       	callq  9b0 <fprintf@plt>
+    1b33:	e9 5b 04 00 00       	jmpq   1f93 <main+0x6c7>
+    1b38:	48 8b 45 90          	mov    -0x70(%rbp),%rax
+    1b3c:	48 89 85 70 f7 ff ff 	mov    %rax,-0x890(%rbp)
+    1b43:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+    1b47:	48 89 85 78 f7 ff ff 	mov    %rax,-0x888(%rbp)
+    1b4e:	48 8b 45 a0          	mov    -0x60(%rbp),%rax
+    1b52:	48 89 85 80 f7 ff ff 	mov    %rax,-0x880(%rbp)
+    1b59:	48 8b 85 78 f7 ff ff 	mov    -0x888(%rbp),%rax
+    1b60:	48 0f af 85 80 f7 ff 	imul   -0x880(%rbp),%rax
+    1b67:	ff 
+    1b68:	48 c1 e0 02          	shl    $0x2,%rax
+    1b6c:	48 89 85 88 f7 ff ff 	mov    %rax,-0x878(%rbp)
+    1b73:	48 c7 85 90 f7 ff ff 	movq   $0x10,-0x870(%rbp)
+    1b7a:	10 00 00 00 
+    1b7e:	48 c7 85 50 f7 ff ff 	movq   $0x0,-0x8b0(%rbp)
+    1b85:	00 00 00 00 
+    1b89:	e9 90 03 00 00       	jmpq   1f1e <main+0x652>
+    1b8e:	48 8d 05 0b 08 00 00 	lea    0x80b(%rip),%rax        # 23a0 <Sepia_Coefficients.22574>
+    1b95:	48 89 85 b8 f7 ff ff 	mov    %rax,-0x848(%rbp)
+    1b9c:	48 8b 85 b8 f7 ff ff 	mov    -0x848(%rbp),%rax
+    1ba3:	62 f1 7c 48 28 00    	vmovaps (%rax),%zmm0
+    1ba9:	62 f1 7c 48 29 85 d0 	vmovaps %zmm0,-0x830(%rbp)
+    1bb0:	f7 ff ff 
+    1bb3:	48 8d 05 26 08 00 00 	lea    0x826(%rip),%rax        # 23e0 <Sepia_Coefficients.22574+0x40>
+    1bba:	48 89 85 b0 f7 ff ff 	mov    %rax,-0x850(%rbp)
+    1bc1:	48 8b 85 b0 f7 ff ff 	mov    -0x850(%rbp),%rax
+    1bc8:	62 f1 7c 48 28 00    	vmovaps (%rax),%zmm0
+    1bce:	62 f1 7c 48 29 85 10 	vmovaps %zmm0,-0x7f0(%rbp)
+    1bd5:	f8 ff ff 
+    1bd8:	48 8d 05 41 08 00 00 	lea    0x841(%rip),%rax        # 2420 <Sepia_Coefficients.22574+0x80>
+    1bdf:	48 89 85 a8 f7 ff ff 	mov    %rax,-0x858(%rbp)
+    1be6:	48 8b 85 a8 f7 ff ff 	mov    -0x858(%rbp),%rax
+    1bed:	62 f1 7c 48 28 00    	vmovaps (%rax),%zmm0
+    1bf3:	62 f1 7c 48 29 85 50 	vmovaps %zmm0,-0x7b0(%rbp)
+    1bfa:	f8 ff ff 
+    1bfd:	48 8b 95 70 f7 ff ff 	mov    -0x890(%rbp),%rdx
+    1c04:	48 8b 85 50 f7 ff ff 	mov    -0x8b0(%rbp),%rax
+    1c0b:	48 01 d0             	add    %rdx,%rax
+    1c0e:	48 89 85 a0 f7 ff ff 	mov    %rax,-0x860(%rbp)
+    1c15:	48 8b 85 a0 f7 ff ff 	mov    -0x860(%rbp),%rax
+    1c1c:	62 f1 fd 08 6f 00    	vmovdqa64 (%rax),%xmm0
+    1c22:	c5 f8 29 85 c0 f7 ff 	vmovaps %xmm0,-0x840(%rbp)
+    1c29:	ff 
+    1c2a:	62 f1 fd 48 6f 85 d0 	vmovdqa64 -0x230(%rbp),%zmm0
+    1c31:	fd ff ff 
+    1c34:	62 f1 fd 08 6f 8d c0 	vmovdqa64 -0x840(%rbp),%xmm1
+    1c3b:	f7 ff ff 
+    1c3e:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    1c43:	c5 f8 92 c8          	kmovw  %eax,%k1
+    1c47:	62 f2 7d 49 31 c1    	vpmovzxbd %xmm1,%zmm0{%k1}
+    1c4d:	62 f1 fd 48 7f 85 90 	vmovdqa64 %zmm0,-0x770(%rbp)
+    1c54:	f8 ff ff 
+    1c57:	62 f1 fd 48 6f 85 90 	vmovdqa64 -0x770(%rbp),%zmm0
+    1c5e:	f8 ff ff 
+    1c61:	62 f1 fd 48 7f 85 50 	vmovdqa64 %zmm0,-0x2b0(%rbp)
+    1c68:	fd ff ff 
+    1c6b:	62 f1 7c 48 28 85 90 	vmovaps -0x270(%rbp),%zmm0
+    1c72:	fd ff ff 
+    1c75:	62 f1 fd 48 6f 8d 50 	vmovdqa64 -0x2b0(%rbp),%zmm1
+    1c7c:	fd ff ff 
+    1c7f:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    1c84:	c5 f8 92 d0          	kmovw  %eax,%k2
+    1c88:	62 f1 7c 4a 5b c1    	vcvtdq2ps %zmm1,%zmm0{%k2}
+    1c8e:	62 f1 7c 48 29 85 d0 	vmovaps %zmm0,-0x730(%rbp)
+    1c95:	f8 ff ff 
+    1c98:	62 f1 7c 48 28 85 d0 	vmovaps -0x730(%rbp),%zmm0
+    1c9f:	f8 ff ff 
+    1ca2:	62 f1 7c 48 29 85 10 	vmovaps %zmm0,-0x6f0(%rbp)
+    1ca9:	f9 ff ff 
+    1cac:	62 f1 7c 48 28 85 d0 	vmovaps -0x730(%rbp),%zmm0
+    1cb3:	f8 ff ff 
+    1cb6:	62 f1 7c 48 29 85 50 	vmovaps %zmm0,-0x6b0(%rbp)
+    1cbd:	f9 ff ff 
+    1cc0:	62 f1 7c 48 28 85 d0 	vmovaps -0x730(%rbp),%zmm0
+    1cc7:	f8 ff ff 
+    1cca:	62 f1 7c 48 29 85 90 	vmovaps %zmm0,-0x670(%rbp)
+    1cd1:	f9 ff ff 
+    1cd4:	62 f1 7c 48 28 85 10 	vmovaps -0x2f0(%rbp),%zmm0
+    1cdb:	fd ff ff 
+    1cde:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    1ce3:	c5 f8 92 d8          	kmovw  %eax,%k3
+    1ce7:	62 f3 7d 4b 04 85 10 	vpermilps $0xc1,-0x6f0(%rbp),%zmm0{%k3}
+    1cee:	f9 ff ff c1 
+    1cf2:	62 f1 7c 48 29 85 10 	vmovaps %zmm0,-0x6f0(%rbp)
+    1cf9:	f9 ff ff 
+    1cfc:	62 f1 7c 48 28 85 d0 	vmovaps -0x330(%rbp),%zmm0
+    1d03:	fc ff ff 
+    1d06:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    1d0b:	c5 f8 92 e0          	kmovw  %eax,%k4
+    1d0f:	62 f3 7d 4c 04 85 50 	vpermilps $0xd5,-0x6b0(%rbp),%zmm0{%k4}
+    1d16:	f9 ff ff d5 
+    1d1a:	62 f1 7c 48 29 85 50 	vmovaps %zmm0,-0x6b0(%rbp)
+    1d21:	f9 ff ff 
+    1d24:	62 f1 7c 48 28 85 90 	vmovaps -0x370(%rbp),%zmm0
+    1d2b:	fc ff ff 
+    1d2e:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    1d33:	c5 f8 92 e8          	kmovw  %eax,%k5
+    1d37:	62 f3 7d 4d 04 85 90 	vpermilps $0xea,-0x670(%rbp),%zmm0{%k5}
+    1d3e:	f9 ff ff ea 
+    1d42:	62 f1 7c 48 29 85 90 	vmovaps %zmm0,-0x670(%rbp)
+    1d49:	f9 ff ff 
+    1d4c:	62 f1 7c 48 28 85 d0 	vmovaps -0x830(%rbp),%zmm0
+    1d53:	f7 ff ff 
+    1d56:	62 f1 7c 48 29 85 10 	vmovaps %zmm0,-0x3f0(%rbp)
+    1d5d:	fc ff ff 
+    1d60:	62 f1 7c 48 28 85 10 	vmovaps -0x6f0(%rbp),%zmm0
+    1d67:	f9 ff ff 
+    1d6a:	62 f1 7c 48 29 85 50 	vmovaps %zmm0,-0x3b0(%rbp)
+    1d71:	fc ff ff 
+    1d74:	62 f1 7c 48 28 85 10 	vmovaps -0x3f0(%rbp),%zmm0
+    1d7b:	fc ff ff 
+    1d7e:	62 f1 7c 48 59 85 50 	vmulps -0x3b0(%rbp),%zmm0,%zmm0
+    1d85:	fc ff ff 
+    1d88:	62 f1 7c 48 29 85 d0 	vmovaps %zmm0,-0x730(%rbp)
+    1d8f:	f8 ff ff 
+    1d92:	62 f1 7c 48 28 85 10 	vmovaps -0x7f0(%rbp),%zmm0
+    1d99:	f8 ff ff 
+    1d9c:	62 f1 7c 48 29 85 50 	vmovaps %zmm0,-0x4b0(%rbp)
+    1da3:	fb ff ff 
+    1da6:	62 f1 7c 48 28 85 50 	vmovaps -0x6b0(%rbp),%zmm0
+    1dad:	f9 ff ff 
+    1db0:	62 f1 7c 48 29 85 90 	vmovaps %zmm0,-0x470(%rbp)
+    1db7:	fb ff ff 
+    1dba:	62 f1 7c 48 28 85 d0 	vmovaps -0x730(%rbp),%zmm0
+    1dc1:	f8 ff ff 
+    1dc4:	62 f1 7c 48 29 85 d0 	vmovaps %zmm0,-0x430(%rbp)
+    1dcb:	fb ff ff 
+    1dce:	62 f1 7c 48 28 85 50 	vmovaps -0x4b0(%rbp),%zmm0
+    1dd5:	fb ff ff 
+    1dd8:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    1ddd:	62 f1 7c 48 28 95 d0 	vmovaps -0x430(%rbp),%zmm2
+    1de4:	fb ff ff 
+    1de7:	c5 f8 92 f0          	kmovw  %eax,%k6
+    1deb:	62 f2 6d 4e 98 85 90 	vfmadd132ps -0x470(%rbp),%zmm2,%zmm0{%k6}
+    1df2:	fb ff ff 
+    1df5:	62 f1 7c 48 29 85 d0 	vmovaps %zmm0,-0x730(%rbp)
+    1dfc:	f8 ff ff 
+    1dff:	62 f1 7c 48 28 85 50 	vmovaps -0x7b0(%rbp),%zmm0
+    1e06:	f8 ff ff 
+    1e09:	62 f1 7c 48 29 85 90 	vmovaps %zmm0,-0x570(%rbp)
+    1e10:	fa ff ff 
+    1e13:	62 f1 7c 48 28 85 90 	vmovaps -0x670(%rbp),%zmm0
+    1e1a:	f9 ff ff 
+    1e1d:	62 f1 7c 48 29 85 d0 	vmovaps %zmm0,-0x530(%rbp)
+    1e24:	fa ff ff 
+    1e27:	62 f1 7c 48 28 85 d0 	vmovaps -0x730(%rbp),%zmm0
+    1e2e:	f8 ff ff 
+    1e31:	62 f1 7c 48 29 85 10 	vmovaps %zmm0,-0x4f0(%rbp)
+    1e38:	fb ff ff 
+    1e3b:	62 f1 7c 48 28 85 90 	vmovaps -0x570(%rbp),%zmm0
+    1e42:	fa ff ff 
+    1e45:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    1e4a:	62 f1 7c 48 28 9d 10 	vmovaps -0x4f0(%rbp),%zmm3
+    1e51:	fb ff ff 
+    1e54:	c5 f8 92 f8          	kmovw  %eax,%k7
+    1e58:	62 f2 65 4f 98 85 d0 	vfmadd132ps -0x530(%rbp),%zmm3,%zmm0{%k7}
+    1e5f:	fa ff ff 
+    1e62:	62 f1 7c 48 29 85 d0 	vmovaps %zmm0,-0x730(%rbp)
+    1e69:	f8 ff ff 
+    1e6c:	62 f1 7c 48 28 85 d0 	vmovaps -0x730(%rbp),%zmm0
+    1e73:	f8 ff ff 
+    1e76:	62 f1 7c 48 29 85 10 	vmovaps %zmm0,-0x5f0(%rbp)
+    1e7d:	fa ff ff 
+    1e80:	62 f1 fd 48 6f 85 50 	vmovdqa64 -0x5b0(%rbp),%zmm0
+    1e87:	fa ff ff 
+    1e8a:	62 f1 fd 48 6f c8    	vmovdqa64 %zmm0,%zmm1
+    1e90:	62 f1 7c 48 28 85 10 	vmovaps -0x5f0(%rbp),%zmm0
+    1e97:	fa ff ff 
+    1e9a:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    1e9f:	c5 f8 92 c8          	kmovw  %eax,%k1
+    1ea3:	62 f1 7d 49 5b c8    	vcvtps2dq %zmm0,%zmm1{%k1}
+    1ea9:	62 f1 fd 48 6f c1    	vmovdqa64 %zmm1,%zmm0
+    1eaf:	62 f1 fd 48 7f 85 90 	vmovdqa64 %zmm0,-0x770(%rbp)
+    1eb6:	f8 ff ff 
+    1eb9:	48 8b 95 70 f7 ff ff 	mov    -0x890(%rbp),%rdx
+    1ec0:	48 8b 85 50 f7 ff ff 	mov    -0x8b0(%rbp),%rax
+    1ec7:	48 01 d0             	add    %rdx,%rax
+    1eca:	48 89 85 98 f7 ff ff 	mov    %rax,-0x868(%rbp)
+    1ed1:	66 c7 85 3a f7 ff ff 	movw   $0xffff,-0x8c6(%rbp)
+    1ed8:	ff ff 
+    1eda:	62 f1 fd 48 6f 85 90 	vmovdqa64 -0x770(%rbp),%zmm0
+    1ee1:	f8 ff ff 
+    1ee4:	62 f1 fd 48 7f 85 d0 	vmovdqa64 %zmm0,-0x630(%rbp)
+    1eeb:	f9 ff ff 
+    1eee:	0f b7 95 3a f7 ff ff 	movzwl -0x8c6(%rbp),%edx
+    1ef5:	62 f1 fd 48 6f 85 d0 	vmovdqa64 -0x630(%rbp),%zmm0
+    1efc:	f9 ff ff 
+    1eff:	48 8b 85 98 f7 ff ff 	mov    -0x868(%rbp),%rax
+    1f06:	c5 f8 92 d2          	kmovw  %edx,%k2
+    1f0a:	62 f2 7e 4a 11 00    	vpmovusdb %zmm0,(%rax){%k2}
+    1f10:	48 8b 85 90 f7 ff ff 	mov    -0x870(%rbp),%rax
+    1f17:	48 01 85 50 f7 ff ff 	add    %rax,-0x8b0(%rbp)
+    1f1e:	48 8b 85 50 f7 ff ff 	mov    -0x8b0(%rbp),%rax
+    1f25:	48 3b 85 88 f7 ff ff 	cmp    -0x878(%rbp),%rax
+    1f2c:	0f 82 5c fc ff ff    	jb     1b8e <main+0x2c2>
+    1f32:	48 8d 95 40 f7 ff ff 	lea    -0x8c0(%rbp),%rdx
+    1f39:	48 8d 8d 40 fe ff ff 	lea    -0x1c0(%rbp),%rcx
+    1f40:	48 8b 85 48 f7 ff ff 	mov    -0x8b8(%rbp),%rax
+    1f47:	48 89 ce             	mov    %rcx,%rsi
+    1f4a:	48 89 c7             	mov    %rax,%rdi
+    1f4d:	e8 84 f6 ff ff       	callq  15d6 <bmp_write_image_data>
+    1f52:	48 8b 85 40 f7 ff ff 	mov    -0x8c0(%rbp),%rax
+    1f59:	48 85 c0             	test   %rax,%rax
+    1f5c:	74 2b                	je     1f89 <main+0x6bd>
+    1f5e:	48 8b 8d 40 f7 ff ff 	mov    -0x8c0(%rbp),%rcx
+    1f65:	48 8b 05 34 11 20 00 	mov    0x201134(%rip),%rax        # 2030a0 <stderr@@GLIBC_2.2.5>
+    1f6c:	48 8b 95 60 f7 ff ff 	mov    -0x8a0(%rbp),%rdx
+    1f73:	48 8d 35 ce 03 00 00 	lea    0x3ce(%rip),%rsi        # 2348 <BMP_Second_Magic_Byte+0x5c>
+    1f7a:	48 89 c7             	mov    %rax,%rdi
+    1f7d:	b8 00 00 00 00       	mov    $0x0,%eax
+    1f82:	e8 29 ea ff ff       	callq  9b0 <fprintf@plt>
+    1f87:	eb 0a                	jmp    1f93 <main+0x6c7>
+    1f89:	c7 85 3c f7 ff ff 00 	movl   $0x0,-0x8c4(%rbp)
+    1f90:	00 00 00 
+    1f93:	48 8d 85 40 fe ff ff 	lea    -0x1c0(%rbp),%rax
+    1f9a:	48 89 c7             	mov    %rax,%rdi
+    1f9d:	e8 b4 eb ff ff       	callq  b56 <bmp_free_image_structure>
+    1fa2:	48 83 bd 68 f7 ff ff 	cmpq   $0x0,-0x898(%rbp)
+    1fa9:	00 
+    1faa:	74 1a                	je     1fc6 <main+0x6fa>
+    1fac:	48 8b 85 68 f7 ff ff 	mov    -0x898(%rbp),%rax
+    1fb3:	48 89 c7             	mov    %rax,%rdi
+    1fb6:	e8 c5 e9 ff ff       	callq  980 <fclose@plt>
+    1fbb:	48 c7 85 68 f7 ff ff 	movq   $0x0,-0x898(%rbp)
+    1fc2:	00 00 00 00 
+    1fc6:	48 83 bd 48 f7 ff ff 	cmpq   $0x0,-0x8b8(%rbp)
+    1fcd:	00 
+    1fce:	74 1a                	je     1fea <main+0x71e>
+    1fd0:	48 8b 85 48 f7 ff ff 	mov    -0x8b8(%rbp),%rax
+    1fd7:	48 89 c7             	mov    %rax,%rdi
+    1fda:	e8 a1 e9 ff ff       	callq  980 <fclose@plt>
+    1fdf:	48 c7 85 48 f7 ff ff 	movq   $0x0,-0x8b8(%rbp)
+    1fe6:	00 00 00 00 
+    1fea:	8b 85 3c f7 ff ff    	mov    -0x8c4(%rbp),%eax
+    1ff0:	48 8b 75 c8          	mov    -0x38(%rbp),%rsi
+    1ff4:	64 48 33 34 25 28 00 	xor    %fs:0x28,%rsi
+    1ffb:	00 00 
+    1ffd:	74 05                	je     2004 <main+0x738>
+    1fff:	e8 8c e9 ff ff       	callq  990 <__stack_chk_fail@plt>
+    2004:	48 81 c4 e8 08 00 00 	add    $0x8e8,%rsp
+    200b:	41 5a                	pop    %r10
+    200d:	5d                   	pop    %rbp
+    200e:	49 8d 62 f8          	lea    -0x8(%r10),%rsp
+    2012:	c3                   	retq   
+    2013:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    201a:	00 00 00 
+    201d:	0f 1f 00             	nopl   (%rax)
+
+0000000000002020 <__libc_csu_init>:
+    2020:	41 57                	push   %r15
+    2022:	41 56                	push   %r14
+    2024:	49 89 d7             	mov    %rdx,%r15
+    2027:	41 55                	push   %r13
+    2029:	41 54                	push   %r12
+    202b:	4c 8d 25 36 0d 20 00 	lea    0x200d36(%rip),%r12        # 202d68 <__frame_dummy_init_array_entry>
+    2032:	55                   	push   %rbp
+    2033:	48 8d 2d 36 0d 20 00 	lea    0x200d36(%rip),%rbp        # 202d70 <__init_array_end>
+    203a:	53                   	push   %rbx
+    203b:	41 89 fd             	mov    %edi,%r13d
+    203e:	49 89 f6             	mov    %rsi,%r14
+    2041:	4c 29 e5             	sub    %r12,%rbp
+    2044:	48 83 ec 08          	sub    $0x8,%rsp
+    2048:	48 c1 fd 03          	sar    $0x3,%rbp
+    204c:	e8 df e8 ff ff       	callq  930 <_init>
+    2051:	48 85 ed             	test   %rbp,%rbp
+    2054:	74 20                	je     2076 <__libc_csu_init+0x56>
+    2056:	31 db                	xor    %ebx,%ebx
+    2058:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    205f:	00 
+    2060:	4c 89 fa             	mov    %r15,%rdx
+    2063:	4c 89 f6             	mov    %r14,%rsi
+    2066:	44 89 ef             	mov    %r13d,%edi
+    2069:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+    206d:	48 83 c3 01          	add    $0x1,%rbx
+    2071:	48 39 dd             	cmp    %rbx,%rbp
+    2074:	75 ea                	jne    2060 <__libc_csu_init+0x40>
+    2076:	48 83 c4 08          	add    $0x8,%rsp
+    207a:	5b                   	pop    %rbx
+    207b:	5d                   	pop    %rbp
+    207c:	41 5c                	pop    %r12
+    207e:	41 5d                	pop    %r13
+    2080:	41 5e                	pop    %r14
+    2082:	41 5f                	pop    %r15
+    2084:	c3                   	retq   
+    2085:	90                   	nop
+    2086:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    208d:	00 00 00 
+
+0000000000002090 <__libc_csu_fini>:
+    2090:	f3 c3                	repz retq 
+
+Disassembly of section .fini:
+
+0000000000002094 <_fini>:
+    2094:	48 83 ec 08          	sub    $0x8,%rsp
+    2098:	48 83 c4 08          	add    $0x8,%rsp
+    209c:	c3                   	retq   
